@@ -81,4 +81,30 @@
 // }
 
 // $apple = new Fruit("Banana", "Yellow");
+
+// Class and Object
+class calculation{
+    // Properties
+    public $a, $b, $c;
+    // Method
+    function sum(){
+        $this->c = $this->a+$this->b;
+        return $this->c;
+    }
+    function sub(){
+        $this->c = $this->a - $this->b;
+        return $this->c;
+    }
+}
+
+// Object
+$c1 = new calculation();
+$c1->a = 10;
+$c1->b = 20;
+
+echo "Sum: " . $c1->sum();
+echo "\n";
+echo "Sub: " . $c1->sub();
+
+
 ?>
