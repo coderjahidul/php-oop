@@ -95,23 +95,65 @@
 // $student_one->get();
 
 // Protected Function
-class user {
-    protected $name;
+// class user {
+//     protected $name;
 
-    public function __construct($name = "Name Not Defined") {
-        $this->name = $name;
+//     public function __construct($name = "Name Not Defined") {
+//         $this->name = $name;
+//     }
+
+//     protected function show(){
+//         echo "User Name: {$this->name} \n";
+//     }
+// }
+
+// class derived extends user {
+//     public function get(){
+//         echo "User Name: {$this->name} \n";
+//     }
+// }
+
+// $user_list = new derived("Nasim Uddin Emon");
+// $user_list->get();
+
+// Private Function
+// class user{
+//     private $name = "Jahidul Islam";
+
+//     public function __construct($n = "Name Not Defined"){
+//         $this->name = $n;
+//     }
+
+//     private function show(){
+//         echo "User Name: {$this->name} \n";
+//     }
+// }
+// $user_list = new user("Nasim Uddin Emon");
+// $user_list->show(); // Error (Private);
+
+// access modifiers
+class Fruit{
+    public $name;
+    protected $color;
+    private $weight;
+
+    public function set_name($n = "Name Not Defined"){
+        $this->name = $n;
     }
-
-    protected function show(){
-        echo "User Name: {$this->name} \n";
+    public function set_color($c = "Color Not Defined"){
+        $this->color = $c;
+    }
+    public function set_weight($w = "Weight Not Defined"){
+        $this->weight = $w;
     }
 }
 
-class derived extends user {
-    public function get(){
-        echo "User Name: {$this->name} \n";
-    }
-}
-
-$user_list = new derived("Nasim Uddin Emon");
-$user_list->get();
+$mango = new Fruit();
+$mango->set_name("Mango"); // Ok (Public)
+echo $mango->name; 
+echo "\n";
+$mango->set_color("Yellow"); // Error (Protected)
+echo $mango->color;
+echo "\n";
+$mango->set_weight("300"); // Error (Private)
+echo $mango->weight;
