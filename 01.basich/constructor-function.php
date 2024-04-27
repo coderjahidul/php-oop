@@ -82,23 +82,45 @@
 // $customar_list->show_user_info();
 
 
-class student_list{
+// class student_list{
+//     public $name;
+//     public $address;
+//     public $admitid;
+
+//     function __construct($n = "No Name", $a = "No Address", $ad = "No Admit Card Id"){
+//         $this->name = $n;
+//         $this->address = $a;
+//         $this->admitid = $ad;
+//     }
+
+//     function show_student_info(){
+//         echo "Student Name: {$this->name} \n";
+//         echo "Student Address: {$this->address} \n";
+//         echo "Student Admit Card Id: {$this->admitid} \n";
+//     }
+// }
+
+// $student_info = new student_list("Jahidul Islam", "Dhaka", "123456");
+// $student_info->show_student_info();
+
+// Construct Function
+class user{
     public $name;
     public $address;
-    public $admitid;
+    public $phone;
 
-    function __construct($n = "No Name", $a = "No Address", $ad = "No Admit Card Id"){
+    public function __construct($n = "No Name", $a = "No Address", $p = "No Phone"){
         $this->name = $n;
         $this->address = $a;
-        $this->admitid = $ad;
+        $this->phone = $p;
     }
 
-    function show_student_info(){
-        echo "Student Name: {$this->name} \n";
-        echo "Student Address: {$this->address} \n";
-        echo "Student Admit Card Id: {$this->admitid} \n";
+    public function show_user_info(){
+        echo "User Name: {$this->name} \n";
+        echo "User Address: {$this->address} \n";
+        echo "User Phone: {$this->phone} \n";
     }
 }
 
-$student_info = new student_list("Jahidul Islam", "Dhaka", "123456");
-$student_info->show_student_info();
+$customar_list = new user("Jahidul Islam", "Dhaka", "01711111111");
+$customar_list->show_user_info();
