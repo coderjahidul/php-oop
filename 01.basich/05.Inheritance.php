@@ -190,37 +190,207 @@
 
 
 // Customar class
-class Customar{
-    public $name;
-    public $phone;
-    Public $email;
+// class Customar{
+//     public $name;
+//     public $phone;
+//     Public $email;
 
-    public function __construct($n = "Name Not Defined", $p = "Phone Not Defined", $e = "Email Not Defined"){
+//     public function __construct($n = "Name Not Defined", $p = "Phone Not Defined", $e = "Email Not Defined"){
+//         $this->name = $n;
+//         $this->phone = $p;
+//         $this->email = $e;
+//     }
+
+//     public function __destruct(){
+//         echo "The Customar name is: {$this->name} and Phone Number is: {$this->phone} and Email is: {$this->email}. \n";
+//     }
+// }
+
+// Inherited from User
+// class User extends Customar{
+//     public $username;
+//     public $role;
+
+//     public function __construct($n = "Name Not Defined", $p = "Phone Not Defined", $e = "Email Not Defined", $u = "Username Not Defined", $r = "Role Not Defined"){
+//         parent::__Construct($n, $p, $e);
+//         $this->username = $u;
+//         $this->role = $r;
+//     }
+
+//     public function __destruct(){
+//         echo "The User name is: {$this->name} and Phone Number is: {$this->phone} and Email is: {$this->email} and username is: {$this->username} and role is: {$this->role}. \n";
+//     }
+// }
+
+// $customar = new Customar("Nasir Uddin Emon", "01711111111", "nassim@gmail");
+// $user = new User("Nasir Uddin Emon", "01711111111", "nassim@gmail", "nassim587", "User");
+
+
+// PHP Inheritance and the protected Access Modifier
+// class Fruit {
+//     public $name;
+//     public $color;
+
+//     public function __construct($name, $color){
+//         $this->name = $name;
+//         $this->color = $color;
+//     }
+//     protected function intro(){
+//         echo "The fruit is {$this->name} and the color is {$this->color}.";
+//     }
+// }
+
+// // Inherit Fruit class
+// class Strawberry extends Fruit{
+//     public function message(){
+//         echo "Am I a fruit or a berry? \n";
+//         $this->intro();
+//     }
+// }
+
+// $strawberry = new Strawberry("Strawberry", "Red");
+// $strawberry->message();
+
+// Customar Class
+// class Customar{
+//     public $name;
+//     public $age;
+//     public $username;
+//     public $email;
+
+//     public function __construct($n = "Name Not Define", $a = "Age Not Define", $u = "Username Not Define", $e = "Email Not Define"){
+//         $this->name = $n;
+//         $this->age = $a;
+//         $this->username = $u;
+//         $this->email = $e;
+//     }
+//     protected function info(){
+//         echo "Customar Name: {$this->name} \n";
+//         echo "Customar Age: {$this->age} \n";
+//         echo "Customar User: {$this->username} \n";
+//         echo "Customar Email: {$this->email} \n \n";
+//     }
+// }
+
+// Inherit Customar class
+// class User extends Customar{
+//     public function __destruct(){
+//         echo "Our Customar Detail: \n";
+//         $this->info();
+//     }
+// }
+
+// $user = new User("Jahidul Islam Sabuz", 26, "jahidul582", "sobuz0349@gmail.com");
+
+// $customar = new User("Nassim Uddin Emon", 22, "emon754", "nassim@gmail.com");
+
+// Studnt Class
+// class Student {
+//     public $name;
+//     public $age;
+//     public $roll;
+//     public $class;
+
+//     public function __construct($n = "Name Not Define", $a = "Name Not Define", $r = "Roll Not Define", $c = "Class Not Define"){
+//         $this->name = $n;
+//         $this->age = $a;
+//         $this->roll = $r;
+//         $this->class = $c;
+//     }
+
+//     protected function student_info(){
+//         echo "Student Name: {$this->name} \n";
+//         echo "Student Age: {$this->age} \n";
+//         echo "Student Roll: {$this->roll} \n";
+//         echo "Student Class: {$this->class} \n \n";
+//     }
+// }
+
+// // Inherit Studnet Class
+// class Studentlist extends Student{
+//     public function __destruct(){
+//         echo "Student Details: \n";
+//         $this->student_info();
+//     }
+// }
+
+// $student = new Studentlist("Jahidul Islam Sabuz", 26, 2188, "Six");
+// $student = new Studentlist("Nassim Uddin Emon", 25, 2189, "Six");
+
+// Overriding inherited Methods
+// class Fruit{
+//     public $name;
+//     public $color;
+//     public function __construct($n = "Name Not Define", $c = "Color Not Define"){
+//         $this->name = $n;
+//         $this->color = $c;
+//     }
+//     public function intro(){
+//         echo "The fruit is {$this->name} and the color is {$this->color}.";
+//     }
+// }
+
+// Inherit Fruit class
+// class Strawberry extends Fruit {
+//     public $weight;
+
+//     public function __construct($n, $c, $w){
+//         $this->name = $n;
+//         $this->color = $c;
+//         $this->weight = $w;
+//     }
+//     public function __destruct(){
+//         echo "Fruit Detals: \n";
+//         echo "Fruit Name: {$this->name} \n";
+//         echo "Fruit Color: {$this->color} \n";
+//         echo "Fruit Weight: {$this->weight} \n \n";
+//     }
+// }
+
+// $strawberry = new Strawberry("Strawberry", "Red", "2kg");
+// $mango = new Strawberry("Mango", "Yellow", "5kg");
+
+// User Class
+class User {
+    public $name;
+    public $age;
+    public $email;
+
+    public function __construct($n, $a, $e){
         $this->name = $n;
-        $this->phone = $p;
+        $this->age = $a;
         $this->email = $e;
     }
 
     public function __destruct(){
-        echo "The Customar name is: {$this->name} and Phone Number is: {$this->phone} and Email is: {$this->email}. \n";
+        echo "User Detail: \n";
+        echo "User Name: {$this->name} \n";
+        echo "User Age: {$this->age} \n";
+        echo "User Email: {$this->email} \n \n";
     }
 }
 
-// Inherited from User
-class User extends Customar{
-    public $username;
-    public $role;
+// Inherit User class
+class Customar extends User{
+    public $phone;
 
-    public function __construct($n = "Name Not Defined", $p = "Phone Not Defined", $e = "Email Not Defined", $u = "Username Not Defined", $r = "Role Not Defined"){
-        parent::__Construct($n, $p, $e);
-        $this->username = $u;
-        $this->role = $r;
+    public function __construct($n, $a, $e, $p){
+        $this->name = $n;
+        $this->age = $a;
+        $this->email = $e;
+        $this->phone = $p;
     }
 
     public function __destruct(){
-        echo "The User name is: {$this->name} and Phone Number is: {$this->phone} and Email is: {$this->email} and username is: {$this->username} and role is: {$this->role}. \n";
+        echo "User Detail: \n";
+        echo "User Name: {$this->name} \n";
+        echo "User Age: {$this->age} \n";
+        echo "User Email: {$this->email} \n";
+        echo "User Phone: {$this->phone} \n \n";
     }
 }
 
-$customar = new Customar("Nasir Uddin Emon", "01711111111", "nassim@gmail");
-$user = new User("Nasir Uddin Emon", "01711111111", "nassim@gmail", "nassim587", "User");
+$customar = new Customar("Jahidul Islam Sabuz", 26, "sobuz0349@gmail.com", "01793700349");
+
+
+
