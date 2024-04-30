@@ -351,46 +351,92 @@
 // $mango = new Strawberry("Mango", "Yellow", "5kg");
 
 // User Class
-class User {
+// class User {
+//     public $name;
+//     public $age;
+//     public $email;
+
+//     public function __construct($n, $a, $e){
+//         $this->name = $n;
+//         $this->age = $a;
+//         $this->email = $e;
+//     }
+
+//     public function __destruct(){
+//         echo "User Detail: \n";
+//         echo "User Name: {$this->name} \n";
+//         echo "User Age: {$this->age} \n";
+//         echo "User Email: {$this->email} \n \n";
+//     }
+// }
+
+// // Inherit User class
+// class Customar extends User{
+//     public $phone;
+
+//     public function __construct($n, $a, $e, $p){
+//         $this->name = $n;
+//         $this->age = $a;
+//         $this->email = $e;
+//         $this->phone = $p;
+//     }
+
+//     public function __destruct(){
+//         echo "User Detail: \n";
+//         echo "User Name: {$this->name} \n";
+//         echo "User Age: {$this->age} \n";
+//         echo "User Email: {$this->email} \n";
+//         echo "User Phone: {$this->phone} \n \n";
+//     }
+// }
+
+// $customar = new Customar("Jahidul Islam Sabuz", 26, "sobuz0349@gmail.com", "01793700349");
+
+
+// PHP - Overriding Inherited Methods
+class Student{
     public $name;
     public $age;
-    public $email;
+    public $roll;
+    public $class;
 
-    public function __construct($n, $a, $e){
+    public function __construct($n = "Name Not Define", $a = "Age Not Define", $r = "Roll Not Define", $c = "Class Not Define"){
         $this->name = $n;
         $this->age = $a;
-        $this->email = $e;
+        $this->roll = $r;
+        $this->class = $c;
     }
 
     public function __destruct(){
-        echo "User Detail: \n";
-        echo "User Name: {$this->name} \n";
-        echo "User Age: {$this->age} \n";
-        echo "User Email: {$this->email} \n \n";
+        echo "Student Detail: \n";
+        echo "Student Name: {$this->name} \n";
+        echo "Student Age: {$this->age} \n";
+        echo "Student Roll: {$this->roll} \n";
+        echo "Student Class: {$this->class} \n \n";
     }
 }
 
-// Inherit User class
-class Customar extends User{
-    public $phone;
+// Inherit Student class
+class Studentlist extends Student{
+    public $section;
 
-    public function __construct($n, $a, $e, $p){
+    public function __construct($n = "Name Not Define", $a = "Age Not Define", $r = "Roll Not Define", $c = "Class Not Define", $s = "Section Not Define"){
         $this->name = $n;
         $this->age = $a;
-        $this->email = $e;
-        $this->phone = $p;
+        $this->roll = $r;
+        $this->class = $c;
+        $this->section = $s;
     }
 
     public function __destruct(){
-        echo "User Detail: \n";
-        echo "User Name: {$this->name} \n";
-        echo "User Age: {$this->age} \n";
-        echo "User Email: {$this->email} \n";
-        echo "User Phone: {$this->phone} \n \n";
+        echo "Student Detail: \n";
+        echo "Student Name: {$this->name} \n";
+        echo "Student Age: {$this->age} \n";
+        echo "Student Roll: {$this->roll} \n";
+        echo "Student Class: {$this->class} \n";
+        echo "Student Section: {$this->section} \n \n";
     }
 }
 
-$customar = new Customar("Jahidul Islam Sabuz", 26, "sobuz0349@gmail.com", "01793700349");
-
-
+$student_list = new Studentlist( ); 
 
