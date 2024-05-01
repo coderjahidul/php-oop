@@ -394,49 +394,138 @@
 
 
 // PHP - Overriding Inherited Methods
-class Student{
-    public $name;
-    public $age;
-    public $roll;
-    public $class;
+// class Student{
+//     public $name;
+//     public $age;
+//     public $roll;
+//     public $class;
 
-    public function __construct($n = "Name Not Define", $a = "Age Not Define", $r = "Roll Not Define", $c = "Class Not Define"){
-        $this->name = $n;
-        $this->age = $a;
-        $this->roll = $r;
-        $this->class = $c;
-    }
+//     public function __construct($n = "Name Not Define", $a = "Age Not Define", $r = "Roll Not Define", $c = "Class Not Define"){
+//         $this->name = $n;
+//         $this->age = $a;
+//         $this->roll = $r;
+//         $this->class = $c;
+//     }
 
-    public function __destruct(){
-        echo "Student Detail: \n";
-        echo "Student Name: {$this->name} \n";
-        echo "Student Age: {$this->age} \n";
-        echo "Student Roll: {$this->roll} \n";
-        echo "Student Class: {$this->class} \n \n";
-    }
-}
+//     public function __destruct(){
+//         echo "Student Detail: \n";
+//         echo "Student Name: {$this->name} \n";
+//         echo "Student Age: {$this->age} \n";
+//         echo "Student Roll: {$this->roll} \n";
+//         echo "Student Class: {$this->class} \n \n";
+//     }
+// }
 
 // Inherit Student class
-class Studentlist extends Student{
-    public $section;
+// class Studentlist extends Student{
+//     public $section;
 
-    public function __construct($n = "Name Not Define", $a = "Age Not Define", $r = "Roll Not Define", $c = "Class Not Define", $s = "Section Not Define"){
+//     public function __construct($n = "Name Not Define", $a = "Age Not Define", $r = "Roll Not Define", $c = "Class Not Define", $s = "Section Not Define"){
+//         $this->name = $n;
+//         $this->age = $a;
+//         $this->roll = $r;
+//         $this->class = $c;
+//         $this->section = $s;
+//     }
+
+//     public function __destruct(){
+//         echo "Student Detail: \n";
+//         echo "Student Name: {$this->name} \n";
+//         echo "Student Age: {$this->age} \n";
+//         echo "Student Roll: {$this->roll} \n";
+//         echo "Student Class: {$this->class} \n";
+//         echo "Student Section: {$this->section} \n \n";
+//     }
+// }
+
+// $student_list = new Studentlist( ); 
+
+// class employee{
+//     public $name;
+//     public $age;
+//     public $salary;
+
+//     public function __construct($n = "Name Not Define", $a = "Age Not Define", $s = "Salary Not Define"){
+//         $this->name = $n;
+//         $this->age = $a;
+//         $this->salary = $s;
+//     }
+//     public function __destruct(){
+//         echo "Employee Profiler: \n";
+//         echo "Employee Name Is: {$this->name} \n";
+//         echo "Employee Age Is: {$this->age} \n";
+//         echo "Employee Salary Is: {$this->salary} \n \n";
+//     }
+// }
+
+// Inherit employee class
+// class manager extends employee{
+//     public $traveling = 1000;
+//     public $phone = 300;
+//     public $totalSalary;
+//     public function __destruct(){
+//         $this->totalSalary = $this->salary + $this->traveling + $this->phone;
+//         echo "Manager Profile: \n";
+//         echo "Manager Name: {$this->name} \n";
+//         echo "Manager Age: {$this->age} \n";
+//         echo "Manager Salary: {$this->totalSalary} \n \n";
+//     }
+// }
+
+// $e1 = new employee("Nassim Uddin Emon", 24, 15000);
+// $e2 = new manager("Jahidul Islam Sabuz", 26, 20000);
+
+// Inheritance class
+class employee{
+    public $name;
+    public $age;
+    public $salary;
+
+    public function __construct($n, $a, $s){
         $this->name = $n;
         $this->age = $a;
-        $this->roll = $r;
-        $this->class = $c;
-        $this->section = $s;
+        $this->salary = $s;
     }
 
     public function __destruct(){
-        echo "Student Detail: \n";
-        echo "Student Name: {$this->name} \n";
-        echo "Student Age: {$this->age} \n";
-        echo "Student Roll: {$this->roll} \n";
-        echo "Student Class: {$this->class} \n";
-        echo "Student Section: {$this->section} \n \n";
+        echo "Employee Profile: \n";
+        echo "Employee Name: {$this->name} \n";
+        echo "Employee Age: {$this->age} \n";
+        echo "Employee Salary: {$this->salary} \n \n";
     }
 }
 
-$student_list = new Studentlist( ); 
+class manager extends employee{
+    public $traveling = 1000;
+    public $phone = 500;
+    public $totalSalary;
+
+    public function __destruct(){
+        $this->totalSalary = $this->salary + $this->traveling + $this->phone;
+        echo "Manager Profile: \n";
+        echo "Manager Name: {$this->name} \n";
+        echo "Manager Age: {$this->age} \n";
+        echo "Manager Salary: {$this->totalSalary} \n \n";
+    }
+}
+
+// Inherit Manager class
+class programmar extends manager{
+    public $helth = 2500;
+    public $home = 5000;
+    public $totalSalary;
+
+    public function __destruct(){
+        $this->totalSalary = $this->salary + $this->traveling + $this->phone + $this->helth + $this->home;
+        echo "Programmar Profile \n";
+        echo "Programmar Name {$this->name} \n";
+        echo "Programmar Age {$this->age} \n";
+        echo "Programmar Salary {$this->totalSalary} \n \n";
+    }
+}
+
+
+$e1 = new employee("Nassim Uddin Emon", 24, 15000);
+$e1 = new manager("Tanvire Ahmed", 27, 15000);
+$e1 = new programmar("Jahidul Islam", 26, 15000);
 
