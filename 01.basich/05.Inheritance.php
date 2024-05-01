@@ -476,56 +476,107 @@
 // $e2 = new manager("Jahidul Islam Sabuz", 26, 20000);
 
 // Inheritance class
-class employee{
+// class employee{
+//     public $name;
+//     public $age;
+//     public $salary;
+
+//     public function __construct($n, $a, $s){
+//         $this->name = $n;
+//         $this->age = $a;
+//         $this->salary = $s;
+//     }
+
+//     public function __destruct(){
+//         echo "Employee Profile: \n";
+//         echo "Employee Name: {$this->name} \n";
+//         echo "Employee Age: {$this->age} \n";
+//         echo "Employee Salary: {$this->salary} \n \n";
+//     }
+// }
+
+// class manager extends employee{
+//     public $traveling = 1000;
+//     public $phone = 500;
+//     public $totalSalary;
+
+//     public function __destruct(){
+//         $this->totalSalary = $this->salary + $this->traveling + $this->phone;
+//         echo "Manager Profile: \n";
+//         echo "Manager Name: {$this->name} \n";
+//         echo "Manager Age: {$this->age} \n";
+//         echo "Manager Salary: {$this->totalSalary} \n \n";
+//     }
+// }
+
+// Inherit Manager class
+// class programmar extends manager{
+//     public $helth = 2500;
+//     public $home = 5000;
+//     public $totalSalary;
+
+//     public function __destruct(){
+//         $this->totalSalary = $this->salary + $this->traveling + $this->phone + $this->helth + $this->home;
+//         echo "Programmar Profile \n";
+//         echo "Programmar Name {$this->name} \n";
+//         echo "Programmar Age {$this->age} \n";
+//         echo "Programmar Salary {$this->totalSalary} \n \n";
+//     }
+// }
+
+
+// $e1 = new employee("Nassim Uddin Emon", 24, 15000);
+// $e2 = new manager("Tanvire Ahmed", 27, 15000);
+// $e3 = new programmar("Jahidul Islam", 26, 15000);
+
+// Teachar class
+class teachar{
     public $name;
-    public $age;
+    public $designation;
     public $salary;
 
-    public function __construct($n, $a, $s){
+    public function __construct($n, $d, $s){
         $this->name = $n;
-        $this->age = $a;
+        $this->designation = $d;
         $this->salary = $s;
     }
 
     public function __destruct(){
-        echo "Employee Profile: \n";
-        echo "Employee Name: {$this->name} \n";
-        echo "Employee Age: {$this->age} \n";
-        echo "Employee Salary: {$this->salary} \n \n";
+        echo "Teachar Profile: \n";
+        echo "Teachar Name: {$this->name} \n";
+        echo "Teachar Designation: {$this->designation} \n";
+        echo "Teacher Salary: {$this->salary} \n \n";
     }
 }
 
-class manager extends employee{
-    public $traveling = 1000;
-    public $phone = 500;
+// Inherit Teachar
+class Steachar extends teachar{
+    public $traveling = 400;
+    public $phone = 450;
     public $totalSalary;
 
     public function __destruct(){
         $this->totalSalary = $this->salary + $this->traveling + $this->phone;
-        echo "Manager Profile: \n";
-        echo "Manager Name: {$this->name} \n";
-        echo "Manager Age: {$this->age} \n";
-        echo "Manager Salary: {$this->totalSalary} \n \n";
+        echo "Sastant Teachar Profile: \n";
+        echo "Sastant Teachar Name: {$this->name} \n";
+        echo "Sastant Teachar Designation: {$this->designation} \n";
+        echo "Sastant Teacher Salary: {$this->totalSalary} \n \n";
     }
 }
 
-// Inherit Manager class
-class programmar extends manager{
-    public $helth = 2500;
-    public $home = 5000;
-    public $totalSalary;
+class principal extends Steachar{
+    public $helth = 5000;
+    public $home = 11500;
+    public $total;
 
     public function __destruct(){
-        $this->totalSalary = $this->salary + $this->traveling + $this->phone + $this->helth + $this->home;
-        echo "Programmar Profile \n";
-        echo "Programmar Name {$this->name} \n";
-        echo "Programmar Age {$this->age} \n";
-        echo "Programmar Salary {$this->totalSalary} \n \n";
+        $this->total = $this->totalSalary + $this->helth + $this->home;
+        echo "Principal Profile: \n";
+        echo "Principal Name: {$this->name} \n";
+        echo "Principal Designation: {$this->designation} \n";
+        echo "Principal Salary: {$this->total} \n \n";
     }
 }
-
-
-$e1 = new employee("Nassim Uddin Emon", 24, 15000);
-$e1 = new manager("Tanvire Ahmed", 27, 15000);
-$e1 = new programmar("Jahidul Islam", 26, 15000);
-
+$e1 = new teachar("Nassim Udding Emon", "PHP", "2000");
+$e1 = new Steachar("Jahidul Islam", "PHP", "2000");
+$e1 = new principal("Tanvire Ahmed", "Laraval", "2000");
