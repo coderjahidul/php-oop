@@ -57,38 +57,75 @@
 // $obj = new B("German");
 // echo $obj->intro();
 
-// Parent Class
-abstract class Car {
-    public $name;
-    public function __construct($name){
-        $this->name = $name;
-    }
-    abstract public function intro() : string;
-}
+// // Parent Class
+// abstract class Car {
+//     public $name;
+//     public function __construct($name){
+//         $this->name = $name;
+//     }
+//     abstract public function intro() : string;
+// }
 
-// Child Classed
-class Audi extends Car {
-    public function intro() : string {
-        return "Choose German Quality! I'm an $this->name! \n";
-    }
-}
-class BMW extends Car {
-    public function intro() : string {
-        return "Choose Chinese Quality! I'm an $this->name! \n";
-    }
-}
+// // Child Classed
+// class Audi extends Car {
+//     public function intro() : string {
+//         return "Choose German Quality! I'm an $this->name! \n";
+//     }
+// }
+// class BMW extends Car {
+//     public function intro() : string {
+//         return "Choose Chinese Quality! I'm an $this->name! \n";
+//     }
+// }
 
-class Mercedes extends Car {
-    public function intro() : string {
-        return "Choose Bangladeshi Quality! I'm an $this->name! \n";
-    }
-}
-// Main Code
-$obj = new Audi("Audi");
-echo $obj->intro();
+// class Mercedes extends Car {
+//     public function intro() : string {
+//         return "Choose Bangladeshi Quality! I'm an $this->name! \n";
+//     }
+// }
+// // Main Code
+// $obj = new Audi("Audi");
+// echo $obj->intro();
 
-$obj = new BMW("BMW");
-echo $obj->intro();
+// $obj = new BMW("BMW");
+// echo $obj->intro();
 
-$obj = new Mercedes("Mercedes");
-echo $obj->intro();
+// $obj = new Mercedes("Mercedes");
+// echo $obj->intro();
+
+// parent Class
+// abstract class Car {
+//     public $name;
+//     public function __construct($name){
+//         $this->name = $name;
+//     }
+//     abstract public function intro() : string;
+// }
+
+// // child Classes
+// class Honda extends Car {
+//     public function intro() : string {
+//         return "Choose German Quality! I'm an $this->name! \n";
+//     }
+// }
+
+// $obj = new Honda("Honda");
+// echo $obj->intro();
+
+// Pareant Class
+// abstract class Car {
+//     public $name;
+//     public function __construct($name){
+//         $this->name = $name;
+//     }
+//     abstract public function intro() : string;
+// }
+
+// class Audi extends Car {
+//     public function intro() : string {
+//         return "Choose Bangladeshi Quality! I'm an $this->name! \n";
+//     }
+// }
+
+// $obj = new Audi("Audi");
+// echo $obj->intro();
