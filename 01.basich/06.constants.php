@@ -290,12 +290,12 @@
 // $obj = new Badboy();
 // $obj->CallInsideClass();
 
-class Employee{
-    const EMPLOYEE_MESSAGE = "Thank you for visiting our website. \n";
-    public function CallInsideClass(){
-        echo self::EMPLOYEE_MESSAGE;
-    }
-}
+// class Employee{
+//     const EMPLOYEE_MESSAGE = "Thank you for visiting our website. \n";
+//     public function CallInsideClass(){
+//         echo self::EMPLOYEE_MESSAGE;
+//     }
+// }
 
-$obj = new Employee();
-$obj->CallInsideClass();
+// $obj = new Employee();
+// $obj->CallInsideClass();
