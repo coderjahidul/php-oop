@@ -140,39 +140,181 @@
 // $animal = new Cat();
 // $animal->makeSound();
 
-interface calc1 {
-    function sum($a, $b);
-}
-interface calc2 {
-    function sub($c, $d);
-}
-interface calc3 {
-    function mult($e, $f);
-}
-interface calc4 {
-    function div($g, $h);
+// interface calc1 {
+//     function sum($a, $b);
+// }
+// interface calc2 {
+//     function sub($c, $d);
+// }
+// interface calc3 {
+//     function mult($e, $f);
+// }
+// interface calc4 {
+//     function div($g, $h);
+// }
+
+// class childClass implements calc1, calc2, calc3, calc4 {
+//     public function sum($a, $b){
+//         echo $a + $b;
+//     }
+//     public function sub($c, $d){
+//         echo $c, $d;
+//     }
+//     public function mult($e, $f){
+//         echo $e * $f;
+//     }
+//     public function div($g, $h){
+//         echo $g / $h;
+//     }
+// }
+
+// $childclass = new childClass();
+// $childclass->sum(58, 29);
+// echo "\n";
+// $childclass->sub(87, 2);
+// echo "\n";
+// $childclass->mult(85, 3);
+// echo "\n";
+// $childclass->div(150, 5);
+
+// interface parent1 {
+//     public function sum($a, $b);
+// }
+
+// interface parent2 {
+//     public function sub($a, $b);
+// }
+
+// interface parent3 {
+//     public function mult($a, $b);
+// }
+
+// interface parent4 {
+//     public function div($a, $b);
+// }
+
+// class childClass implements parent1, parent2, parent3, parent4 {
+//     public function sum($a, $b){
+//         echo $a + $b;
+//     }
+
+//     public function sub($a, $b){
+//         echo $a - $b;
+//     }
+
+//     public function mult($a, $b){
+//         echo $a * $b;
+//     }
+
+//     public function div($a, $b){
+//         echo $a / $b;
+//     }
+// }
+
+// $childclass = new childClass();
+// $childclass->sum(25, 15);
+// echo "\n";
+// $childclass->sub(25, 15);
+// echo "\n";
+// $childclass->mult(25, 15);
+// echo "\n";
+// $childclass->div(25, 15); 
+
+
+// interface School{
+//     public function mySchool();
+// }
+
+// class Student implements School{
+
+//     public function __construct(){
+//         $this->mySchool();
+//     }
+//     public function mySchool(){
+//         echo "I'm a Student. \n";
+//     }
+// }
+
+// $student = new Student();
+
+// interface School{
+//     public function mySchool();
+// }
+// interface Collage {
+//     public function myCollage();
+// }
+// interface Varsity{
+//     public function myVarsity();
+// }
+
+// class Student implements School, Collage, Varsity {
+
+//     public function __construct(){
+//         $this->mySchool();
+//         $this->myCOllage();
+//         $this->myVarsity();
+//     }
+
+//     public function mySchool(){
+//         echo "I'm a Student of School. \n";
+//     }
+//     public function myCollage(){
+//         echo "I'm a Student of Collage. \n";
+//     }
+//     public function myVarsity(){
+//         echo "I'm a Student of Varsity. \n";
+//     }
+// }
+// class Teacher implements School, Collage, Varsity {
+
+//     public function __construct(){
+//         $this->mySchool();
+//         $this->myCOllage();
+//         $this->myVarsity();
+//     }
+
+//     public function mySchool(){
+//         echo "I'm a Teacher of School. \n";
+//     }
+//     public function myCollage(){
+//         echo "I'm a Teacher of Collage. \n";
+//     }
+//     public function myVarsity(){
+//         echo "I'm a Teacher of Varsity. \n";
+//     }
+// }
+
+// $student = new Student();
+// $teacher = new Teacher();
+
+interface School{
+    public function mySchool();
 }
 
-class childClass implements calc1, calc2, calc3, calc4 {
-    public function sum($a, $b){
-        echo $a + $b;
+interface Collage{
+    public function myCollage();
+}
+
+interface Varsity{
+    public function myVarsity();
+}
+
+class Teacher implements School, Collage, Varsity {
+    public function __construct(){
+        $this->mySchool();
+        $this->myCollage();
+        $this->myVarsity();
     }
-    public function sub($c, $d){
-        echo $c, $d;
+
+    public function mySchool(){
+        echo "I'm a Teacher of School. \n";
     }
-    public function mult($e, $f){
-        echo $e * $f;
+    public function myCollage(){
+        echo "I'm a Teacher of Collage. \n";
     }
-    public function div($g, $h){
-        echo $g / $h;
+    public function myVarsity(){
+        echo "I'm a Teacher of Varsity. \n";
     }
 }
 
-$childclass = new childClass();
-$childclass->sum(58, 29);
-echo "\n";
-$childclass->sub(87, 2);
-echo "\n";
-$childclass->mult(85, 3);
-echo "\n";
-$childclass->div(150, 5);
+$teacher = new Teacher();
