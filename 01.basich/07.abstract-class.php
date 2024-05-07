@@ -129,3 +129,107 @@
 
 // $obj = new Audi("Audi");
 // echo $obj->intro();
+
+// // Pareant Class
+// abstract class Car {
+//     public $name;
+//     public function __construct($name){
+//         $this->name = $name;
+//     }
+//     abstract public function intro() : string;
+// }
+
+// // Child Class
+// class Audi extends Car {
+//     public function intro() : string{
+//         return "Choose Bangladeshai Quality! I'm an $this->name! \n";
+//     }
+// }
+
+// class BMW extends Car {
+//     public function intro() : string{
+//         return "Choose Garmani Quality! I'm an $this->name! \n";
+//     }
+// }
+// class Volvo extends Car {
+//     public function intro() : string {
+//         return "Proud to be Swedish! I'm a $this->name!";
+//     }
+// }
+
+// $obj = new Audi("Audi");
+// echo $obj->intro();
+// $obj = new BMW("BMW");
+// echo $obj->intro();
+// $obj = new Volvo("Volvo");
+// echo $obj->intro();
+
+
+// abstract class ParentClass {
+//     // Abstract method with an argument
+//     abstract protected function prefixName($name);
+// }
+
+// class ChildClass extends ParentClass {
+//     public function prefixName($name){
+//         if ($name == "Jahidul Islam"){
+//             $prefix = "Mr.";
+//         }elseif ($name == "Rimi Khondokar"){
+//             $prefix = "Mrs.";
+//         }else {
+//             $prefix = "";
+//         }
+//         return "{$prefix}{$name}";
+//     }
+// }
+// $class = new ChildClass;
+// echo $class->prefixName("Jahidul Islam");
+// echo "\n";
+// echo $class->prefixname("Rimi Khondokar");
+
+// Parent Class
+// abstract class ParentClass {
+//     // Abstract method with an argument
+//     abstract protected function prefixName($name);
+// }
+
+// class ChildClass extends ParentClass {
+//     public function prefixName($name){
+//         if($name == "Jahidul Islam"){
+//             $prefix = "Mr.";
+//         }elseif($name == "Rimi Khondokar"){
+//             $prefix = "Mrs.";
+//         }else{
+//             $prefix = "";
+//         }
+//         return "{$prefix} {$name}";
+//     }
+// }
+
+// $class = new ChildClass();
+// echo $class->prefixName("Jahidul Islam");
+// echo "\n";
+// echo $class->prefixname("Rimi Khondokar");
+
+abstract class ParentClass {
+    // Abstract method with an argument
+    abstract protected function prefixName($name);
+}
+
+class ChildClass extends ParentClass {
+    public function prefixName($name, $separator = ".", $greet = "Dear"){
+        if($name == "Jahidul Islam"){
+            $prefix = "Mr";
+        }elseif($name == "Rimi Khondokar"){
+            $prefix = "Mrs";
+        }else {
+            $prefix = "";
+        }
+        return "{$greet} {$prefix}{$separator}{$name}";
+    }
+}
+
+$class = new ChildClass();
+echo $class->prefixName("Jahidul Islam");
+echo "\n";
+echo $class->prefixName("Rimi Khondokar");
