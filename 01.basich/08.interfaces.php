@@ -287,34 +287,59 @@
 // $student = new Student();
 // $teacher = new Teacher();
 
-interface School{
-    public function mySchool();
+// interface School{
+//     public function mySchool();
+// }
+
+// interface Collage{
+//     public function myCollage();
+// }
+
+// interface Varsity{
+//     public function myVarsity();
+// }
+
+// class Teacher implements School, Collage, Varsity {
+//     public function __construct(){
+//         $this->mySchool();
+//         $this->myCollage();
+//         $this->myVarsity();
+//     }
+
+//     public function mySchool(){
+//         echo "I'm a Teacher of School. \n";
+//     }
+//     public function myCollage(){
+//         echo "I'm a Teacher of Collage. \n";
+//     }
+//     public function myVarsity(){
+//         echo "I'm a Teacher of Varsity. \n";
+//     }
+// }
+
+// $teacher = new Teacher();
+
+// Declare the interface Template
+interface Template {
+    public function setVariable($name, $var);
+    public function getHtml($template);
 }
 
-interface Collage{
-    public function myCollage();
-}
-
-interface Varsity{
-    public function myVarsity();
-}
-
-class Teacher implements School, Collage, Varsity {
-    public function __construct(){
-        $this->mySchool();
-        $this->myCollage();
-        $this->myVarsity();
+// Implement the interface Template
+class WorkingTemplate implements Template {
+    private $vars = [];
+    public function setVariable($name, $var){
+        $this->vars[$name] = $var;
     }
-
-    public function mySchool(){
-        echo "I'm a Teacher of School. \n";
-    }
-    public function myCollage(){
-        echo "I'm a Teacher of Collage. \n";
-    }
-    public function myVarsity(){
-        echo "I'm a Teacher of Varsity. \n";
+    public function getHtml($template){
+        foreach($this->vars as $name => $value){
+            $template = str_replace('{' . $name . '}', $value, $template);
+        }
+        return $template;
     }
 }
 
-$teacher = new Teacher();
+$obj = new WorkingTemplate();
+$obj->setVariable('Name', 'Jhon');
+$obj->setVariable('Age', 25);
+echo $obj->getHtml('My name is {Name} and I am {Age} years old.');
