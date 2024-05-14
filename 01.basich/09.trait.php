@@ -59,23 +59,48 @@
 // $obj2->msg2();
 
 // Define a trait
-trait Logging {
-    public function log($message){
-        echo '[' . date('Y-m-d H:i:s') . '] - ' . $message . PHP_EOL;
+// trait Logging {
+//     public function log($message){
+//         echo '[' . date('Y-m-d H:i:s') . '] - ' . $message . PHP_EOL;
+//     }
+// }
+
+// // Define a class that uses the trait
+// class User {
+//     use Logging;
+//     private $name;
+//     public function __construct($name){
+//         $this->name = $name;
+//     }
+//     public function getName(){
+//         return $this->name;
+//     }
+// }
+
+// $user = new User('John');
+// $user->log('User created: ' . $user->getName());
+
+trait message1 {
+    public function msg1(){
+        echo "Hi, jahidul islam. \n";
+    }
+}
+trait message2 {
+    public function msg2(){
+        echo "bye bye Jahidul Islam. \n";
     }
 }
 
-// Define a class that uses the trait
-class User {
-    use Logging;
-    private $name;
-    public function __construct($name){
-        $this->name = $name;
-    }
-    public function getName(){
-        return $this->name;
-    }
+class hi {
+    use message1;
+}
+class bye {
+    use message1, message2;
 }
 
-$user = new User('John');
-$user->log('User created: ' . $user->getName());
+$obj = new hi();
+$obj->msg1();
+echo "\n";
+$obj = new bye();
+$obj->msg1();
+$obj->msg2();
