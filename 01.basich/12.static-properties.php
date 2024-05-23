@@ -34,4 +34,4 @@ class x extends pi {
 echo x::$value;
 echo "\n";
 $x = new x();
-echo $x->staticValue();
+echo $x->staticValue(); 
